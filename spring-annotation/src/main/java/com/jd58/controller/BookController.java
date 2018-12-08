@@ -1,5 +1,7 @@
 package com.jd58.controller;
 
+import com.jd58.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -7,4 +9,7 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class BookController {
+
+    @Autowired
+    private BookService bookService;
 }
