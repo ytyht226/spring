@@ -22,7 +22,7 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware {
 
     @Value("${db.user}")
     private String user;
-    @Value("${db.password")
+    @Value("${db.password}")
     private String pwd;
 
     private String driverClass;
