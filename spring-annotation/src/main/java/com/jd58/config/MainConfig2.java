@@ -5,6 +5,7 @@ import com.jd58.bean.ColorFactoryBean;
 import com.jd58.bean.Person;
 import com.jd58.bean.Red;
 import com.jd58.condition.LinuxCondition;
+import com.jd58.condition.MyImportBeanDefinitionRegistrar;
 import com.jd58.condition.MyImportSelector;
 import com.jd58.condition.WindowsCondition;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -15,7 +16,7 @@ import org.springframework.context.annotation.*;
  */
 @Configuration
 @Conditional({WindowsCondition.class})
-@Import({Color.class, Red.class, MyImportSelector.class})
+@Import({Color.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 public class MainConfig2 {
 
     @Bean("person")
