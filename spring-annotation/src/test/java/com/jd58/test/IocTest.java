@@ -1,6 +1,7 @@
 package com.jd58.test;
 
 import com.jd58.bean.Blue;
+import com.jd58.bean.Color;
 import com.jd58.bean.Person;
 import com.jd58.config.MainConfig2;
 import org.junit.Test;
@@ -14,7 +15,7 @@ import java.util.Map;
  * Created by yanghuitao on 2018/12/7.
  */
 public class IocTest {
-    private ApplicationContext ac = new AnnotationConfigApplicationContext(MainConfig2.class);
+    private AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(MainConfig2.class);
 
 
     @Test
@@ -58,6 +59,7 @@ public class IocTest {
 //            System.out.println(beanName);
 //        }
         Person person = ac.getBean("person", Person.class);
+        Color color = ac.getBean("colorFactoryBean", Color.class);
 //        Person person2 = ac.getBean("person", Person.class);
 //        System.out.println(person == person2);
     }

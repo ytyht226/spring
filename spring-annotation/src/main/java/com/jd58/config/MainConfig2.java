@@ -17,6 +17,7 @@ import org.springframework.context.annotation.*;
 @Configuration
 @Conditional({WindowsCondition.class})
 @Import({Color.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
+@PropertySource(value = {"classpath:/person.properties"})
 public class MainConfig2 {
 
     @Bean("person")

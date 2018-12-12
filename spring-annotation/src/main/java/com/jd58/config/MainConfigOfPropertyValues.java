@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
  * Created by yht on 2018/12/7.
  */
 @Configuration
-@PropertySource(value = {"person.properties"})
+@PropertySource(value = {"classpath:/person.properties"})
 public class MainConfigOfPropertyValues {
 
     @Bean
