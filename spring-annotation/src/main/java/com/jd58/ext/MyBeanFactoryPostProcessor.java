@@ -3,6 +3,7 @@ package com.jd58.ext;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -15,6 +16,9 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        DefaultListableBeanFactory bf = (DefaultListableBeanFactory) beanFactory;
+//        bf.setAllowCircularReferences(false);
+
         System.out.println("MyBeanFactoryPostProcessor...postProcessBeanFactory...");
         int count = beanFactory.getBeanDefinitionCount();
         String[] names = beanFactory.getBeanDefinitionNames();
