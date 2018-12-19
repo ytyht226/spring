@@ -11,7 +11,7 @@
            http://www.springframework.org/schema/mvc
            http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd" default-autowire="byName">
 
-    <mvc:resources location="/static/" mapping="/static/**"/>
+    <!--<mvc:resources location="/static/" mapping="/static/**"/>-->
     <mvc:annotation-driven>
         <!--<mvc:message-converters register-defaults="true">-->
             <!--<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>-->
@@ -23,12 +23,12 @@
     <import resource="classpath:springConfig/viewConfig/jsp.xml"/>
     <!--<import resource="classpath:springConfig/viewConfig/freemarker.xml"/>-->
 
-    <!--<mvc:interceptors>-->
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/**"/>-->
-            <!--<mvc:exclude-mapping path="/login/out"/>-->
-            <!--<mvc:exclude-mapping path="/login/auth"/>-->
-            <!--<bean class="org.format.demo.interceptor.LoginInterceptor"/>-->
-        <!--</mvc:interceptor>-->
-    <!--</mvc:interceptors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/login/out"/>
+            <mvc:exclude-mapping path="/login/auth"/>
+            <bean class="com.jd58.mvcxml.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
