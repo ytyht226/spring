@@ -15,7 +15,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * Created by yanghuitao on 2018/12/8.
  */
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = false)
 public class MainConfigOfAop {
 
     @Bean(autowire = Autowire.BY_NAME)
@@ -23,28 +23,28 @@ public class MainConfigOfAop {
         return new MathCalculator();
     }
 
-    @Bean
+//    @Bean
     public Car car0() {
         return new Car();
     }
 
-    @Bean
+//    @Bean
     public Car car() {
         return new Car();
     }
 
-    @Bean
+//    @Bean
     public Blue blue() {
         return new Blue();
     }
 
 
-//    @Bean
+    @Bean
     public LogAspects logAspects() {
         return new LogAspects();
     }
 
-    @Bean
+//    @Bean
     public MyBeanFactoryPostProcessor myBeanFactoryPostProcessor() {
         return new MyBeanFactoryPostProcessor();
     }

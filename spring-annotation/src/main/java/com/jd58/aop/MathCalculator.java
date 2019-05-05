@@ -14,8 +14,8 @@ public class MathCalculator implements MathInterface{
     private Blue blue;
 
     public int div(int i, int j) {
-        System.out.println("car: " + car);
-        System.out.println("blue: " + blue);
+//        System.out.println("car: " + car);
+//        System.out.println("blue: " + blue);
         return i / j;
     }
 
