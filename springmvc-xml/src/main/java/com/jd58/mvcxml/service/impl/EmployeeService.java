@@ -3,15 +3,15 @@ package com.jd58.mvcxml.service.impl;
 import com.jd58.mvcxml.dao.IBaseDao;
 import com.jd58.mvcxml.model.Employee;
 import com.jd58.mvcxml.service.IEmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class EmployeeService implements IEmployeeService {
 
-    @Autowired
+    @Resource
     private IBaseDao baseDao;
 
     @Override

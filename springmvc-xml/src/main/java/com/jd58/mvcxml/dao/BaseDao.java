@@ -2,16 +2,16 @@ package com.jd58.mvcxml.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Repository
 public class BaseDao implements IBaseDao {
 
-    @Autowired
+    @Resource
     @Qualifier("sessionFactory")
     private SessionFactory sessionFactory;
 

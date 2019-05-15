@@ -3,11 +3,10 @@ package com.jd58.mvcxml.controller;
 import com.jd58.mvcxml.model.Dept;
 import com.jd58.mvcxml.service.IDeptService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
+//@Controller
 @RequestMapping("/dept")
 public class DeptController {
 

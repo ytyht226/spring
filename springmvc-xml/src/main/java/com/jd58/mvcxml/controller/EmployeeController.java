@@ -4,7 +4,6 @@ import com.jd58.mvcxml.model.Employee;
 import com.jd58.mvcxml.service.IDeptService;
 import com.jd58.mvcxml.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Controller
+//@Controller
 @RequestMapping(value = "/employee")
 public class EmployeeController {
 
