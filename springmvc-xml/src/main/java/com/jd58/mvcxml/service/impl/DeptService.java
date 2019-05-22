@@ -13,6 +13,7 @@ import java.util.List;
 public class DeptService implements IDeptService {
 
     @Resource
+//    @Autowired
     private BaseDao baseDao;
 
     @Override
@@ -25,5 +26,7 @@ public class DeptService implements IDeptService {
     public void saveOrUpdate(Dept dept) {
         baseDao.saveOrUpdate(dept);
     }
+
+
 
 }

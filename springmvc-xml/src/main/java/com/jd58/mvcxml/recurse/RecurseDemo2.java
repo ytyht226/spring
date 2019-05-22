@@ -1,4 +1,6 @@
-package com.jd58.mvcxml.ext;
+package com.jd58.mvcxml.recurse;
+
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
