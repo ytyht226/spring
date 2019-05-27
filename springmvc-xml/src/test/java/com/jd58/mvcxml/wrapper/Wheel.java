@@ -8,4 +8,10 @@ import lombok.Data;
 @Data
 public class Wheel {
     private String position;
+
+    public Wheel(){}
+
+    public Wheel(String position) {
+        this.position = position;
+    }
 }

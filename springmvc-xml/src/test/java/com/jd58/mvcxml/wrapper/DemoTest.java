@@ -9,6 +9,10 @@ import org.springframework.beans.PropertyValue;
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by yanghuitao on 2019/5/24.
@@ -56,11 +60,29 @@ public class DemoTest {
 //        beanWrapperOfCar.setPropertyValue("wheels[0].position", "修改过的左边");
 //        System.out.println(beanWrapperOfCar.getWrappedInstance());
 
-//        Wheel wheel = new Wheel();
-//        wheel.setPosition("position...");
-//        BeanWrapper wheelWrapper = new BeanWrapperImpl(wheel);
-//        System.out.println(wheelWrapper.getPropertyValue("position"));
+        Wheel wheel = new Wheel();
+        wheel.setPosition("position...");
 
-        BeanInfo beanInfo = Introspector.getBeanInfo(Wheel.class);
+        Driver driver = new Driver();
+        driver.setAge(25);
+//        BeanWrapper wheelWrapper = new BeanWrapperImpl(wheel);
+//        wheelWrapper.setPropertyValue("position", "position...");
+//        System.out.println(wheelWrapper.getPropertyValue("position"));
+//        System.out.println("wheel: " + wheel);
+
+        Car car = new Car();
+        BeanWrapper carWrapper = new BeanWrapperImpl(car);
+//        car.setDriver(driver);
+//        car.setWheels(Arrays.asList(wheel));
+
+//        Map<String, Wheel> wheelMap = new HashMap<>();
+//        wheelMap.put("key1", wheel);
+//        carWrapper.setPropertyValue("wheelMap", wheelMap);
+        carWrapper.setPropertyValue("wheelMap['key2']", new Wheel("position2"));
+        System.out.println("car: " + car);
+        System.out.println(carWrapper.getPropertyValue("wheelMap"));
+//        System.out.println(carWrapper.getPropertyValue("wheels[0]"));
+
+//        BeanInfo beanInfo = Introspector.getBeanInfo(Wheel.class);
     }
 }
