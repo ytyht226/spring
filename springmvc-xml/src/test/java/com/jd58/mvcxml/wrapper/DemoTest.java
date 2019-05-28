@@ -1,14 +1,13 @@
 package com.jd58.mvcxml.wrapper;
 
 import org.junit.Test;
-import org.springframework.beans.BeanWrapper;
-import org.springframework.beans.BeanWrapperImpl;
-import org.springframework.beans.PropertyAccessorFactory;
-import org.springframework.beans.PropertyValue;
+import org.springframework.beans.*;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
+import java.beans.PropertyEditorSupport;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -72,17 +71,42 @@ public class DemoTest {
 
         Car car = new Car();
         BeanWrapper carWrapper = new BeanWrapperImpl(car);
+        carWrapper.registerCustomEditor(String.class, "name", new PropertyEditorSupport(){
+            @Override
+            public void setAsText(String text) throws IllegalArgumentException {
+                setValue(Integer.parseInt(text) * 5);
+            }
+        });
 //        car.setDriver(driver);
 //        car.setWheels(Arrays.asList(wheel));
 
 //        Map<String, Wheel> wheelMap = new HashMap<>();
 //        wheelMap.put("key1", wheel);
 //        carWrapper.setPropertyValue("wheelMap", wheelMap);
+        carWrapper.setPropertyValue("name", "1");
         carWrapper.setPropertyValue("wheelMap['key2']", new Wheel("position2"));
         System.out.println("car: " + car);
         System.out.println(carWrapper.getPropertyValue("wheelMap"));
+        System.out.println(carWrapper.getPropertyValue("name"));
 //        System.out.println(carWrapper.getPropertyValue("wheels[0]"));
 
 //        BeanInfo beanInfo = Introspector.getBeanInfo(Wheel.class);
     }
+
+    @Test
+    public void test2() {
+        SimpleTypeConverter converter = new SimpleTypeConverter();
+        converter.registerCustomEditor(URL.class, new PropertyEditorSupport(){
+            @Override
+            public void setAsText(String text) throws IllegalArgumentException {
+                if (text.contains("http://")) {
+                    text = text.replace("http://", "https://");
+                }
+                setValue(text);
+            }
+        });
+        URL url = converter.convertIfNecessary("http://www.springframework.org", URL.class);
+        System.out.println(url.toString());
+    }
+
 }
