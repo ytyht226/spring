@@ -1,4 +1,4 @@
-package com.jd58.mvcxml.wrapper;
+package com.jd58.mvcxml.test.wrapper;
 
 import lombok.Data;
 

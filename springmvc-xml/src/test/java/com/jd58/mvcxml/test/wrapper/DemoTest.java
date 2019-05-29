@@ -1,17 +1,11 @@
-package com.jd58.mvcxml.wrapper;
+package com.jd58.mvcxml.test.wrapper;
 
 import org.junit.Test;
 import org.springframework.beans.*;
 
-import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
-import java.beans.Introspector;
 import java.beans.PropertyEditorSupport;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by yanghuitao on 2019/5/24.
