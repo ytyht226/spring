@@ -1,8 +1,8 @@
-package com.nlu.handler;
+package com.concurrency.handler;
 
 
-import com.nlu.NluContext;
-import com.nlu.model.ChitModelResult;
+import com.concurrency.NluContext;
+import com.concurrency.model.ChitModelResult;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,11 +11,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class ChitModelHandler implements EventHandler {
     @Override
-    public void handle(NluContext context) {
+    public EventHandler handle(NluContext context) {
         System.out.println("ChitModelHandler: " + context.getTNluRequest().getQuery());
         ChitModelResult result = new ChitModelResult();
         //todo...
         result.setResult("chitModelResult...");
         context.setChitModelResult(result);
+        return this;
     }
 }

@@ -1,7 +1,7 @@
-package com.nlu.handler;
+package com.concurrency.handler;
 
-import com.nlu.NluContext;
-import com.nlu.model.DomainSortResult;
+import com.concurrency.NluContext;
+import com.concurrency.model.DomainSortResult;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class DomainSortHandler implements EventHandler {
     @Override
-    public void handle(NluContext context) {
+    public EventHandler handle(NluContext context) {
         System.out.println("DomainSortHandler: " + context.getTNluRequest().getQuery());
         DomainSortResult result = new DomainSortResult();
         result.setResult("domainSortResult...");
@@ -22,5 +22,6 @@ public class DomainSortHandler implements EventHandler {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        return this;
     }
 }

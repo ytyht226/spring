@@ -1,6 +1,6 @@
-package com.nlu.thrift;
+package com.concurrency.thrift;
 
-import com.nlu.TNluRequest;
+import com.concurrency.TNluRequest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

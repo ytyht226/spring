@@ -1,4 +1,4 @@
-package com.nlu;
+package com.concurrency;
 
 import lombok.Data;
 

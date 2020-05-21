@@ -1,11 +1,11 @@
-package com.nlu.thrift;
+package com.concurrency.thrift;
 
-import com.nlu.handler.ChitModelHandler;
-import com.nlu.handler.DomainSortHandler;
-import com.nlu.handler.QaBotHandler;
-import com.nlu.NluContextHolder;
-import com.nlu.TNluRequest;
-import com.nlu.ThreadPoolService;
+import com.concurrency.handler.ChitModelHandler;
+import com.concurrency.handler.DomainSortHandler;
+import com.concurrency.handler.QaBotHandler;
+import com.concurrency.NluContextHolder;
+import com.concurrency.TNluRequest;
+import com.concurrency.ThreadPoolService;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

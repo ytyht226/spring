@@ -1,6 +1,6 @@
-package com.nlu.thrift;
+package com.concurrency.thrift;
 
-import com.nlu.TNluRequest;
+import com.concurrency.TNluRequest;
 
 /**
  * Created by yanghuitao on 2020/2/28.

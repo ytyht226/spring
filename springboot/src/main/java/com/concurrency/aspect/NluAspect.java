@@ -1,8 +1,8 @@
-package com.nlu.aspect;
+package com.concurrency.aspect;
 
-import com.nlu.NluContext;
-import com.nlu.NluContextHolder;
-import com.nlu.TNluRequest;
+import com.concurrency.NluContext;
+import com.concurrency.NluContextHolder;
+import com.concurrency.TNluRequest;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class NluAspect {
 
-    @Around(value = "execution(* com.nlu.thrift.TNluFacade.*(..)) ")
+    @Around(value = "execution(* com.concurrency.thrift.TNluFacade.*(..)) ")
     public Object doAround(ProceedingJoinPoint point) {
         Object result = null;
         try {

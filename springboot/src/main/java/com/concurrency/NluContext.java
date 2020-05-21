@@ -1,9 +1,9 @@
-package com.nlu;
+package com.concurrency;
 
 import lombok.Data;
-import com.nlu.model.ChitModelResult;
-import com.nlu.model.DomainSortResult;
-import com.nlu.model.QaBotResult;
+import com.concurrency.model.ChitModelResult;
+import com.concurrency.model.DomainSortResult;
+import com.concurrency.model.QaBotResult;
 
 /**
  * Created by yanghuitao on 2020/2/27.
